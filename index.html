@@ -1,15 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <script src="app.js" defer></script>
     <title>Arcade</title>
-    
-</head>
-<body>
-    <h1>I am an Arcade</h1>
-</body>
+  </head>
+  <body>
+    <div id="getNames">
+      <div id="form">
+        
+        <label>Player1: </label>
+        <input type="text" name="playerOne" autofocus/>
+        <label>Player2: </label>
+        <input type="text" name="playerTwo" autofocus/>
+        <button id="submit"> Start Game!</button>
+        <!-- <input type="submit" value="Start"/> -->
+      </div>
+    </div> 
+    <h1>Tic-Tac-Toe</h1>
+    <div id="displayNames">
+      <h3>Player1: <span id="displayPlayerOne"></span></h3>
+      <h3>Player2: <span id="displayPlayerTwo"></span></h3>
+    </div>
+    <div id="table">
+        <table id="grabTable">
+        <tr>
+            <td class="test"></td>
+            <td class="test"></td>
+            <td class="test">X</td>
+        </tr>
+        <tr>
+          <td class="test"></td>
+          <td class="test"></td>
+          <td class="test"></td>
+        </tr>
+        <tr>
+          <td class="test"></td>
+          <td class="test">O</td>
+          <td class="test"></td>
+        </tr>
+        </table>
+    </div>    
+  </body>
 </html>

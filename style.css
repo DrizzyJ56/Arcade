@@ -1,3 +1,59 @@
+body{
+    background-color: #ECECEC;
+    margin: 0;
+}
+
+
 h1{
+    font-size: 80px;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: black;
+    text-align: center;
     color: red;
+}
+#getNames{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 30px;
+}
+#displayNames{
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 30px;
+}
+#displayPlayerOne{
+    font-size: 26px;
+    font-weight: lighter;
+}
+#displayPlayerTwo{
+    font-size: 26px;
+    font-weight: lighter;
+}
+input{
+    padding: 6px;
+}
+.name{
+    padding-left: 1rem;
+    font-weight: lighter;
+}
+#table{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+td{
+    background-color: white;
+    border: 2px solid black;
+    height: 2in;
+    width: 2in;
+    text-align: center;
+    font-size: 100px;
+}
+.X{
+    display: inline-flex;
+
 }
