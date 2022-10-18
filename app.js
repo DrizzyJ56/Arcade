@@ -2,9 +2,11 @@ let firstPlayer = document.getElementById("playerOne");
 let secondPlayer = document.getElementById("playerTwo");
 const grabTable = document.getElementById("grabTable");
 const grabForm = document.getElementById("submit");
+const playComp = document.getElementById('computer');
 let turnCounter = 0;
 let playerOneName = "Insert name to start the game";
 let playerTwoName = "Insert name to start the game";
+playComp.addEventListener('click', playComputer)
 grabForm.addEventListener("click", showPlayers);
 const gameState = {
   players: ["X", "O"],
@@ -14,6 +16,14 @@ const gameState = {
     [null, null, null],
   ],
 };
+function playComputer(){
+  let playerOneName = document.getElementsByName('playerOne')[0].value
+  let playerTwoName = 'Computer'
+  document.getElementById('displayPlayerOne').innerText = playerOneName
+  document.getElementById('displayPlayerTwo').innerText = playerTwoName
+
+
+}
 
 function showPlayers() {
   let playerOneName = document.getElementsByName("playerOne")[0].value;
@@ -21,7 +31,6 @@ function showPlayers() {
   document.getElementById("displayPlayerOne").innerText = playerOneName;
   document.getElementById("displayPlayerTwo").innerText = playerTwoName;
 }
-
 function winGame() {
   console.log(gameState.board)
   //Rows Below
@@ -42,6 +51,7 @@ function winGame() {
     document.getElementById("spotSeven").innerText = ''
     document.getElementById("spotEight").innerText = ''
     document.getElementById("spotNine").innerText = ''
+    turnCounter = 0
   }
   if (
     turnCounter % 2 === 0 &&
@@ -59,6 +69,7 @@ function winGame() {
     document.getElementById("spotSeven").innerText = ''
     document.getElementById("spotEight").innerText = ''
     document.getElementById("spotNine").innerText = ''
+    turnCounter = 0
   }
   if (
     turnCounter % 2 === 0 &&
@@ -76,6 +87,7 @@ function winGame() {
     document.getElementById("spotSeven").innerText = ''
     document.getElementById("spotEight").innerText = ''
     document.getElementById("spotNine").innerText = ''
+    turnCounter = 0
   }
   //O's
   if (
@@ -94,6 +106,7 @@ function winGame() {
     document.getElementById("spotSeven").innerText = ''
     document.getElementById("spotEight").innerText = ''
     document.getElementById("spotNine").innerText = ''
+    turnCounter = 0
   }
   if (
     turnCounter % 2 === 1 &&
@@ -111,6 +124,7 @@ function winGame() {
     document.getElementById("spotSeven").innerText = ''
     document.getElementById("spotEight").innerText = ''
     document.getElementById("spotNine").innerText = ''
+    turnCounter = 0
   }
   if (
     turnCounter % 2 === 1 &&
@@ -128,6 +142,7 @@ function winGame() {
     document.getElementById("spotSeven").innerText = ''
     document.getElementById("spotEight").innerText = ''
     document.getElementById("spotNine").innerText = ''
+    turnCounter = 0
   }
   //Columns Below
   //X's
@@ -147,6 +162,7 @@ function winGame() {
     document.getElementById("spotSeven").innerText = ''
     document.getElementById("spotEight").innerText = ''
     document.getElementById("spotNine").innerText = ''
+    turnCounter = 0
   }
   if (
     turnCounter % 2 === 0 &&
@@ -164,6 +180,7 @@ function winGame() {
     document.getElementById("spotSeven").innerText = ''
     document.getElementById("spotEight").innerText = ''
     document.getElementById("spotNine").innerText = ''
+    turnCounter = 0
   }
   if (
     turnCounter % 2 === 0 &&
@@ -181,6 +198,7 @@ function winGame() {
     document.getElementById("spotSeven").innerText = ''
     document.getElementById("spotEight").innerText = ''
     document.getElementById("spotNine").innerText = ''
+    turnCounter = 0
   }
   //O's
   if (
@@ -199,6 +217,7 @@ function winGame() {
     document.getElementById("spotSeven").innerText = ''
     document.getElementById("spotEight").innerText = ''
     document.getElementById("spotNine").innerText = ''
+    turnCounter = 0
   }
   if (
     turnCounter % 2 === 1 &&
@@ -216,6 +235,7 @@ function winGame() {
     document.getElementById("spotSeven").innerText = ''
     document.getElementById("spotEight").innerText = ''
     document.getElementById("spotNine").innerText = ''
+    turnCounter = 0
   }
   if (
     turnCounter % 2 === 1 &&
@@ -233,6 +253,7 @@ function winGame() {
     document.getElementById("spotSeven").innerText = ''
     document.getElementById("spotEight").innerText = ''
     document.getElementById("spotNine").innerText = ''
+    turnCounter = 0
   }
 
   //Diagonal Below
@@ -253,6 +274,7 @@ function winGame() {
     document.getElementById("spotSeven").innerText = ''
     document.getElementById("spotEight").innerText = ''
     document.getElementById("spotNine").innerText = ''
+    turnCounter = 0
   }
   if (
     turnCounter % 2 === 0 &&
@@ -270,6 +292,7 @@ function winGame() {
     document.getElementById("spotSeven").innerText = ''
     document.getElementById("spotEight").innerText = ''
     document.getElementById("spotNine").innerText = ''
+    turnCounter = 0
   }
   //O's
   if (
@@ -288,6 +311,7 @@ function winGame() {
     document.getElementById("spotSeven").innerText = ''
     document.getElementById("spotEight").innerText = ''
     document.getElementById("spotNine").innerText = ''
+    turnCounter = 0
   }
   if (
     turnCounter % 2 === 1 &&
@@ -305,6 +329,7 @@ function winGame() {
     document.getElementById("spotSeven").innerText = ''
     document.getElementById("spotEight").innerText = ''
     document.getElementById("spotNine").innerText = ''
+    turnCounter = 0
   }
 }
 playerOne = gameState.players[0];
@@ -324,7 +349,11 @@ grabTable.addEventListener("click", function (clickEvent) {
     gameState.board[2][2] = document.getElementById("spotNine").innerText;
     winGame()
       turnCounter++;
-    } else if (turnCounter % 2 === 1 && clickEvent.target.innerText === "") {
+
+    }else if (turnCounter %2 === 1 && document.getElementById('displayPlayerTwo') === 'Computer'){
+      console.log('test')
+    }
+    else if (turnCounter % 2 === 1 && clickEvent.target.innerText === "" && document.getElementById('displayPlayerTwo') !== 'Computer') {
       clickEvent.target.innerText = playerTwo;
       gameState.board[0][0] = document.getElementById("spotOne").innerText;
     gameState.board[0][1] = document.getElementById("spotTwo").innerText;
